@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>FireFly-NOX</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.4.7/peerjs.min.js"></script>
+    <link rel="icon" href="chat.png" type="image/x-icon">
+<link rel="stylesheet" href="chat.css" />
+</head>
+<body oncontextmenu="return false;">
+    <div class="chat-app">
+        <div class="chat-header">
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <div class="profile-icon" id="profile-icon">
+                <img src="/api/placeholder/40/40" alt="Profile" id="profile-image">
+            </div>
+            <div class="head">
+            <h1>FireFly-NOX</Fire-NOX></h1></div>
+            <p>Your Connection ID: <span id="peer-id"></span><span class="copy-icon" onclick="copyPeerId()"> <button class="copybtn-style">  📋</button></span></p>
+            <div class="peer-input">
+            <input type="text" id="peer-id-input"placeholder="Enter Peer ID to connect">
+            <button onclick="connectToPeer()">Connect</button></div>
+            <button id="exit-chat-btn" onclick="exitChat()">Exit Chat</button>
+        </div>
+        <div class="chat-body">
+            <div class="user-list" id="user-list">
+                <h3>Connected Users</h3>
+                <div class="close-connect">
+                <button onclick="toggleMenu()" class="close">X</button>
+            </div>
+            </div>
+            <div class="chat-messages" id="messages"></div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Type your message..." autofocus>
+            <label for="file-input" class="attachment-icon">📎</label>
+            <input type="file" id="file-input" accept="image/*,video/*">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <div id="profile-popup" class="popup">
+        <div class="popup-content">
+            <h2>Set Your Profile</h2>
+            <input type="text" id="name-input" placeholder="Enter your name">
+            <input type="file" id="profile-pic-input" accept="image/*">
+            <button onclick="saveProfile()">Save Profile</button>
+        </div>
+    </div>
+
+
+    <div id="loading-popup" class="loading-popup">
+        <div class="loading-content">
+            <div class="loader"></div>
+            <p class="establish">Establishing connection...</p>
+        </div>
+    </div>
+
+    <div class="profile-menu" id="profile-menu">
+        <div class="profile-preview" id="profile-preview">
+            <img src="/api/placeholder/100/100" alt="Profile Preview" id="preview-image">
+        </div>
+        <input type="text" id="profile-name" placeholder="Enter your name">
+        <input type="file" id="profile-picture" accept="image/*">
+        <div class="wallpaper">
+            <h4>Select Background:</h4>
+            <div id="wallpaper-options" class="wallpaper-options">
+                <!-- Wallpaper options will be dynamically added here -->
+            </div>
+        </div>
+        <h4>Message Box Colors:</h4>
+        <input type="color" id="sent-color" value="#4a90e2">
+        <label for="sent-color">Sent Messages</label><br>
+        <input type="color" id="received-color" value="#50c878">
+        <label for="received-color">Received Messages</label>
+        <button onclick="updateProfile()">Update Profile</button>
+    </div>
+    <!--=======================================================exp...-->
+    <div class="overlay2" id="overlay2"></div>
+    <div class="alert-popup2" id="alertPopup2">
+        ⚠️ Warning: Screenshot or suspicious activity detected!
+    </div>
+    <!-- Hotjar Tracking Code for FireFly-NOX -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:5253641,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<script src="chat.js"></script>
+</body>
+</html> 
